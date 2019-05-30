@@ -26,7 +26,8 @@ public class FileDealer implements BasicDealer {
 		// outputStream.flush();
 		// outputStream.close();
 		PrintWriter writer = response.getWriter();
-		writer.write(result);
+		// writer.write(result);
+		writer.println(result);
 		writer.flush();
 		writer.close();
 	}
