@@ -1,0 +1,14 @@
+服务端
+1.展示根盘
+2.展示文件夹下文件
+3.传输文件
+客户端
+1.查看盘符
+2.查看文件结构
+3.下载文档
+
+/listRoots
+/listFiles
+/transferFiles
+
+10.33.224.46:8088/file/listRoots
