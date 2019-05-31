@@ -21,13 +21,22 @@ public class FileDealer implements BasicDealer {
 
 		String result = JSONObject.toJSONString(listRoots);
 
+		String returnMessage = "HTTP/1.1 400 OK\r\n";
+		returnMessage += "Content-Type: text/html\r\n";
+		returnMessage += "Content-Length: " + result.length() + "\r\n";
+		returnMessage += "\r\n";
+		// returnMessage += "<h1>" + result + "</h1>";
+		returnMessage += result;
+
+		System.out.println(returnMessage);
+
 		// OutputStream outputStream = response.getOutputStream();
-		// outputStream.write(result.getBytes());
+		// outputStream.write(returnMessage.getBytes());
 		// outputStream.flush();
 		// outputStream.close();
+
 		PrintWriter writer = response.getWriter();
-		// writer.write(result);
-		writer.println(result);
+		writer.println(returnMessage);
 		writer.flush();
 		writer.close();
 	}
